@@ -12,6 +12,9 @@ runreports.sh will initialize the DB and run the script to grab and send reports
 Note that this assumes the structure for reports and the unprocessed log file will look something like this:
 /root
 	|
+
    | - reports/
+
 	| - old_reports/
+
 	| - unprocessed.log
