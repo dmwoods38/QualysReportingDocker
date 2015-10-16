@@ -10,6 +10,7 @@ Dockerfile to help get up and running much quicker than going through the other 
 runreports.sh will initialize the DB and run the script to grab and send reports.
 
 Note that this assumes the structure for reports and the unprocessed log file will look something like this:
+
 |--root
 	
 	|-- reports/
