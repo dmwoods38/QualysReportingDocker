@@ -9,7 +9,9 @@ RUN pip install psycopg2
 COPY reports.json /usr/local/lib/python2.7/dist-packages/qgreports/config/reports.json
 COPY settings.py /usr/local/lib/python2.7/dist-packages/qgreports/config/settings.py
 COPY runreports.sh /usr/local/bin/runreports.sh
+COPY addreports.sh /usr/local/bin/addreports.sh
 RUN chmod 700 /usr/local/bin/runreports.sh
+RUN chmod 700 /usr/local/bin/addreports.sh
 USER postgres
 RUN /etc/init.d/postgresql start &&\
 	psql --command "ALTER ROLE postgres with password 'qgpostgres';" &&\
@@ -21,3 +23,5 @@ USER root
 RUN mkdir /root/reports
 RUN mkdir /root/old_reports
 RUN touch /root/unprocessed.log
+RUN /etc/init.d/postgresql start &&\
+	/usr/local/bin/addreports.sh
