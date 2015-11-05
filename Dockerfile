@@ -13,7 +13,7 @@ COPY addreports.sh /usr/local/bin/addreports.sh
 RUN chmod 700 /usr/local/bin/runreports.sh
 RUN chmod 700 /usr/local/bin/addreports.sh
 USER postgres
-RUN /etc/init.d/postgresql start &&\
+RUN /etc/init.d/postgresql start && sleep 10 &&\
 	psql --command "ALTER ROLE postgres with password 'qgpostgres';" &&\
 	createdb qualysguard
 RUN echo "local	all	all	password > /etc/postgresql/9.3/main/pg_hba.conf"
@@ -23,5 +23,5 @@ USER root
 RUN mkdir /root/reports
 RUN mkdir /root/old_reports
 RUN touch /root/unprocessed.log
-RUN /etc/init.d/postgresql start &&\
+RUN /etc/init.d/postgresql start && sleep 10 &&\
 	/usr/local/bin/addreports.sh
