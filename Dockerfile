@@ -15,7 +15,7 @@ RUN chmod 700 /usr/local/bin/addreports.sh
 USER postgres
 RUN /etc/init.d/postgresql start && sleep 10 &&\
 	psql --command "ALTER ROLE postgres with password 'qgpostgres';" &&\
-	createdb qualysguard
+	createdb qualysguard --template template0 --encoding utf-8
 RUN echo "local	all	all	password > /etc/postgresql/9.3/main/pg_hba.conf"
 RUN echo "host	all	all	127.0.0.1/32	password>> /etc/postgresql/9.3/main/pg_hba.conf"
 RUN echo "host	all	all	::1/128	password>> /etc/postgresql/9.3/main/pg_hba.conf"
