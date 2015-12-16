@@ -7,6 +7,7 @@ RUN pip install requests
 RUN pip install sqlalchemy
 RUN pip install psycopg2
 RUN pip install elasticsearch
+RUN pip install requests-aws4auth
 COPY reports.json /usr/local/lib/python2.7/dist-packages/qgreports/config/reports.json
 COPY settings.py /usr/local/lib/python2.7/dist-packages/qgreports/config/settings.py
 COPY runreports.sh /usr/local/bin/runreports.sh
