@@ -2,7 +2,7 @@ FROM ubuntu
 MAINTAINER <Dean Woods>
 RUN apt-get update
 RUN apt-get install -y git python-pip python-dev postgresql libpq-dev
-RUN pip install git+https://github.com/dmwoods38/QualysReporting.git
+RUN pip install git+https://github.com/dmwoods38/QualysReporting.git@dev
 RUN pip install requests
 RUN pip install sqlalchemy
 RUN pip install psycopg2
