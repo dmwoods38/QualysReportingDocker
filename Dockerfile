@@ -2,6 +2,7 @@ FROM ubuntu
 MAINTAINER <Dean Woods>
 RUN apt-get update
 RUN apt-get install -y git python-pip python-dev postgresql libpq-dev
+RUN pip install requests[security]
 RUN pip install git+https://github.com/dmwoods38/QualysReporting.git@dev
 RUN pip install elasticsearch
 RUN pip install requests-aws4auth
