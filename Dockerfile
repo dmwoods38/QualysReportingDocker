@@ -24,5 +24,4 @@ USER root
 RUN mkdir /root/reports
 RUN mkdir /root/old_reports
 RUN touch /root/unprocessed.log
-RUN /etc/init.d/postgresql start && sleep 20 &&\
-	/usr/local/bin/addreports.sh
+RUN /etc/init.d/postgresql start && /usr/local/bin/addreports.sh
