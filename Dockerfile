@@ -2,9 +2,9 @@ FROM ubuntu
 MAINTAINER <Dean Woods>
 RUN apt-get update --fix-missing
 RUN apt-get install -y git python-pip python-dev postgresql libpq-dev libffi-dev libssl-dev netcat
-RUN pip install requests[security]
+RUN pip install --upgrade requests[security]
 RUN pip install elasticsearch
-RUN pip install requests-aws4auth
+RUN pip install --upgrade requests-aws4auth
 RUN pip install git+https://github.com/dmwoods38/QualysReporting.git
 RUN mkdir /root/reports
 RUN mkdir /root/old_reports
