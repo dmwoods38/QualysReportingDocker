@@ -10,7 +10,7 @@ RUN mkdir /root/reports
 RUN mkdir /root/old_reports
 RUN touch /root/unprocessed.log
 USER postgres
-RUN /etc/init.d/postgresql start && sleep 10 &&\
+RUN /etc/init.d/postgresql start && sleep 20 &&\
 	psql --command "ALTER ROLE postgres with password 'qgpostgres';" &&\
 	createdb qualysguard --template template0 --encoding utf-8
 RUN echo "local	all	all	password > /etc/postgresql/9.3/main/pg_hba.conf"
