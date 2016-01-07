@@ -5,7 +5,7 @@ RUN apt-get install -y git python-pip python-dev postgresql libpq-dev libffi-dev
 RUN pip install requests[security]
 RUN pip install elasticsearch
 RUN pip install requests-aws4auth
-RUN pip install git+https://github.com/dmwoods38/QualysReporting.git@dev
+RUN pip install git+https://github.com/dmwoods38/QualysReporting.git
 RUN mkdir /root/reports
 RUN mkdir /root/old_reports
 RUN touch /root/unprocessed.log
@@ -23,4 +23,4 @@ COPY runreports.sh /usr/local/bin/runreports.sh
 COPY addreports.sh /usr/local/bin/addreports.sh
 RUN chmod 700 /usr/local/bin/runreports.sh
 RUN chmod 700 /usr/local/bin/addreports.sh
-RUN /etc/init.d/postgresql start /usr/local/bin/addreports.sh
+RUN /etc/init.d/postgresql start && /usr/local/bin/addreports.sh
