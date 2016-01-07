@@ -5,7 +5,7 @@ RUN apt-get install -y git python-pip python-dev postgresql libpq-dev libffi-dev
 RUN pip install requests[security]
 RUN pip install elasticsearch
 RUN pip install requests-aws4auth
-RUN pip install git+https://github.com/dmwoods38/QualysReporting.git
+RUN pip install git+https://github.com/dmwoods38/QualysReporting.git@dev
 RUN mkdir /root/reports
 RUN mkdir /root/old_reports
 RUN touch /root/unprocessed.log
