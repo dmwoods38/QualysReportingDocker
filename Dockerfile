@@ -1,7 +1,7 @@
 FROM ubuntu
 MAINTAINER <Dean Woods>
 RUN apt-get update
-RUN apt-get install -y git python-pip python-dev postgresql libpq-dev
+RUN apt-get install -y git python-pip python-dev postgresql libpq-dev netcat
 RUN pip install git+https://github.com/dmwoods38/QualysReporting.git
 RUN pip install requests
 RUN pip install sqlalchemy
@@ -14,7 +14,7 @@ COPY addreports.sh /usr/local/bin/addreports.sh
 RUN chmod 700 /usr/local/bin/runreports.sh
 RUN chmod 700 /usr/local/bin/addreports.sh
 USER postgres
-RUN /etc/init.d/postgresql start && sleep 10 &&\
+RUN /etc/init.d/postgresql start && sleep 20 &&\
 	psql --command "ALTER ROLE postgres with password 'qgpostgres';" &&\
 	createdb qualysguard --template template0 --encoding utf-8
 RUN echo "local	all	all	password > /etc/postgresql/9.3/main/pg_hba.conf"
@@ -24,5 +24,5 @@ USER root
 RUN mkdir /root/reports
 RUN mkdir /root/old_reports
 RUN touch /root/unprocessed.log
-RUN /etc/init.d/postgresql start && sleep 10 &&\
+RUN /etc/init.d/postgresql start && sleep 20 &&\
 	/usr/local/bin/addreports.sh
