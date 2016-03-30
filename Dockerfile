@@ -23,4 +23,4 @@ COPY runreports.sh /usr/local/bin/runreports.sh
 COPY addreports.sh /usr/local/bin/addreports.sh
 RUN chmod 700 /usr/local/bin/runreports.sh
 RUN chmod 700 /usr/local/bin/addreports.sh
-RUN /etc/init.d/postgresql start && /usr/local/bin/addreports.sh
+RUN /usr/local/bin/addreports.sh
