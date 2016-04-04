@@ -12,8 +12,6 @@ RUN touch /root/unprocessed.log
 COPY reports.json /usr/local/lib/python2.7/dist-packages/qgreports/config/reports.json
 COPY settings.py /usr/local/lib/python2.7/dist-packages/qgreports/config/settings.py
 COPY runreports.sh /usr/local/bin/runreports.sh
-COPY addreports.sh /usr/local/bin/addreports.sh
 RUN chmod 700 /usr/local/bin/runreports.sh
-RUN chmod 700 /usr/local/bin/addreports.sh
 RUN chmod 700 /usr/local/lib/python2.7/dist-packages/qgreports/config/reports.json
 RUN chmod 700 /usr/local/lib/python2.7/dist-packages/qgreports/config/settings.py
