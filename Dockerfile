@@ -1,7 +1,7 @@
 FROM ubuntu
 MAINTAINER <Dean Woods>
 RUN apt-get update --fix-missing
-RUN apt-get install -y git python-pip python-dev libffi-dev libssl-dev netcat
+RUN apt-get install -y git python-pip python-dev libffi-dev libssl-dev
 RUN pip install --upgrade requests[security]
 RUN pip install elasticsearch
 RUN pip install --upgrade requests-aws4auth
