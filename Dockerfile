@@ -7,7 +7,10 @@ RUN apt-get install -y git python-pip python-dev libffi-dev libssl-dev
 RUN pip install --upgrade requests[security]
 RUN pip install elasticsearch
 RUN pip install --upgrade requests-aws4auth
-RUN make install
+
+COPY install-qgreports.sh /usr/local/bin/install-qgreports.sh
+RUN chmod 700 /usr/local/bin/install-qgreports.sh
+RUN /usr/local/bin/install-qgreports.sh
 
 RUN mkdir /root/reports
 RUN mkdir /root/old_reports
