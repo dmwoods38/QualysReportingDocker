@@ -7,7 +7,7 @@ RUN apt-get install -y git python-pip python-dev libffi-dev libssl-dev
 RUN pip install --upgrade requests[security]
 RUN pip install elasticsearch
 RUN pip install --upgrade requests-aws4auth
-RUN pip install git+https://github.com/dmwoods38/QualysReporting.git@dev
+RUN make install
 
 RUN mkdir /root/reports
 RUN mkdir /root/old_reports
