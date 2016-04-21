@@ -7,5 +7,5 @@ ADDSCANSFILE=${QGSCRIPTS}/add_scans.py
 QGCONFIGS=${QGREPORTS}/config
 SCAN_CONFIG=${QGCONFIGS}/scan_config.json
 
-echo "GETSCANS.SH: Getting scans: add_scans.py"
+echo "ADDSCANS.SH: Getting scans: add_scans.py"
 ${PYTHONBIN} ${ADDSCANSFILE} ${SCAN_CONFIG}
