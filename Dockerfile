@@ -21,9 +21,11 @@ COPY settings.py /usr/local/lib/python2.7/dist-packages/qgreports/config/setting
 COPY scan_config.json /usr/local/lib/python2.7/dist-packages/qgreports/config/scan_config.json
 COPY runreports.sh /usr/local/bin/runreports.sh
 COPY addscans.sh /usr/local/bin/addscans.sh
+COPY getschedule.sh /usr/local/bin/getschedule.sh
 
 RUN chmod 700 /usr/local/bin/runreports.sh
 RUN chmod 700 /usr/local/bin/addscans.sh
+RUN chmod 700 /usr/local/bin/getschedule.sh
 RUN chmod 700 /usr/local/lib/python2.7/dist-packages/qgreports/config/reports.json
 RUN chmod 700 /usr/local/lib/python2.7/dist-packages/qgreports/config/settings.py
 RUN chmod 700 /usr/local/lib/python2.7/dist-packages/qgreports/config/scan_config.json
