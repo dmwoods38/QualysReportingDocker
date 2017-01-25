@@ -1,9 +1,11 @@
-FROM ubuntu
+FROM ubuntu:16.04
 MAINTAINER <Dean Woods>
 
 RUN apt-get update --fix-missing
+RUN apt-get upgrade -y
 RUN apt-get install -y git python-pip python-dev libffi-dev libssl-dev
 
+RUN pip install --upgrade pip
 RUN pip install --upgrade requests[security]
 RUN pip install elasticsearch
 RUN pip install --upgrade requests-aws4auth
